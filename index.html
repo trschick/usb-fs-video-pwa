@@ -6,8 +6,30 @@
   <title>HDMI Capture Viewer</title>
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#000000" />
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #controls {
+      padding: 1rem;
+    }
+    video {
+      width: 100vw;
+      height: calc(100vh - 100px);
+      object-fit: contain;
+    }
+  </style>
 </head>
 <body>
+  <div id="controls">
+    <select id="cameraSelect"></select>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+  </div>
   <video id="viewer" autoplay playsinline controls muted></video>
   <script src="capture.js"></script>
   <script>
